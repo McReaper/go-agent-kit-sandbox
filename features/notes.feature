@@ -22,3 +22,8 @@ Feature: Notes
     Given the note "Groceries"
     When I delete the note "Groceries"
     Then the list shows 0 notes
+
+  @wip
+  Scenario: A note with an empty title is refused
+    When I add the note "" with the text "eggs, milk"
+    Then it is refused with "a title is required"
