@@ -1,0 +1,26 @@
+name: kit
+
+# The kit's merge check, review sheet and auto-merge, at the kit commit the
+# uses line pins: kit-check.yml reads it from the job's token, so this is
+# the one pin, and Dependabot moves it.
+
+on:
+  pull_request:
+    # edited: GitHub moves a stacked pull request to the default branch
+    # once the one below it merged.
+    types: [opened, synchronize, reopened, edited]
+  pull_request_review:
+    types: [submitted]
+  push:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  kit:
+    permissions:
+      contents: write # auto-merge
+      pull-requests: write # the review sheet's comment, auto-merge
+      issues: write # the review sheet's label
+      id-token: write # the kit's version, read from the job's token
+    uses: McReaper/go-agent-kit/.github/workflows/kit-check.yml@f420af3a6c35d7130df67768c6ec3b7cc8ce8401 # v0.2.0
