@@ -1,6 +1,6 @@
-# notes
+# go-agent-kit-sandbox
 
-Short notes for people and agents, served as MCP tools (`notes mcp`) and CLI commands (`notes add-note`, `notes list-notes`). It is the anti-drift kit's template: an app starts as a copy of it.
+The go-agent-kit's trial ground: an app started from the kit's template, where the kit's merge check, auto-merge and plugin run for real. Its code is still the template's notes module (`notes mcp`, `notes add-note`, `notes list-notes`).
 
 ## Start an app from it
 
